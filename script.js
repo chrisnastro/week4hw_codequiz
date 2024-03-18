@@ -1,4 +1,3 @@
-const { create } = require("@mui/material/styles/createTransitions");
 
 var score = 0;
 var questIndex = 0;
@@ -29,9 +28,9 @@ timer.addEventListener("click", function () {
 function render(questIndex) {
     questDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    for (let i = 0; i < questions.length; i ++) {
+    for (let i = 0; i < questions.length; i++) {
         var questText = questions[questIndex].title;
-var choicesText = questions[questIndex].choices;
+        var choicesText = questions[questIndex].choices;
     }
     choicesText.forEach(function (newQuest) {
         var listQuest = document.createElement("li");
@@ -44,7 +43,7 @@ var choicesText = questions[questIndex].choices;
 
 function checkAns(event) {
     var answer = event.target;
-    if  (answer.matches("li")) {
+    if (answer.matches("li")) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         if (answer.textContent === questions[questIndex].answer) {
@@ -78,11 +77,11 @@ function quizEnd() {
     createP.setAttribute("id", "createP");
     questDiv.appendChild(createP);
 
-    if (secondsLeft >= 0 ) {
+    if (secondsLeft >= 0) {
         var timeLeft = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeLeft; 
+        createP.textContent = "Your final score is: " + timeLeft;
         questDiv.appendChild(createP2);
     }
 
@@ -102,4 +101,27 @@ function quizEnd() {
     initialsEntered.setAttribute("id", "Submit");
     initialsEntered.textContent = "Submit";
     questDiv.appendChild(initialsEntered);
+
+
+    initialsEntered.addEventListener("click", function () {
+        var initials = initialInput.value;
+        if (initials === null) {
+            alert("Please Enter Your Initials!")
+        } else {
+            var finalScore = {
+                initials: initials,
+                score: timeLeft
+            }
+            var allScores = localStorage.getItem("allscores");
+            if (allScores === null) {
+                allScores = [];
+            } else {
+                allScores = JSON.parse(allScores);
+            }
+            allScores.push(finalScore);
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+            window.location.replace("./highscores.html")
+        }
+    });
 }
