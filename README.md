@@ -5,6 +5,7 @@
 - [User Story](#User-Story)
 - [Acceptance Criteria](#Acceptance-Criteria)
 - [Submission](#Submission)
+- [Credit](#Credit)
 
 ## Overview
 
@@ -40,6 +41,10 @@ THEN I can save my initials and my score
 
 * [GitHub Repo](https://github.com/chrisnastro/week4hw_codequiz)
 
-https://github.com/chrisnastro/week4hw_codequiz
+## Credit
+
+JavaScript Quiz questions courtesy of [LinkedIn](https://www.linkedin.com/pulse/ultimate-javascript-quiz-over-200-questions-test-your-svekis--eilzc/)
+
+
 
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
