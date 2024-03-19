@@ -2,17 +2,16 @@ var score = 0;
 var questIndex = 0;
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
-var questDiv = document.querySelector("#questdiv");
+var questDiv = document.querySelector("#questDiv");
 var container = document.querySelector("#container");
-var secondsLeft = 76;
+var secondsLeft = 61;
 var holdInterval = 0;
-// var penalty = 10;
 var ulCreate = document.createElement("ul");
 
 var questions = [
     {
         title: "What is the correct syntax for referring to an external script called \"app.js\"?",
-        choices: [ "<script href=\"app.js\"", "<script name=\"app.js\">", "<script src=\"app.js\">", "<script file=\"app.js\">"],
+        choices: [ "<script href=\"app.js\">", "<script name=\"app.js\">", "<script src=\"app.js\">", "<script file=\"app.js\">"],
         answer: "<script src=\"app.js\">"
     },
     {
@@ -32,7 +31,7 @@ var questions = [
     },
     {
         title: "Which method is used to add an element at the end of an array?",
-        choices: ["array.push(element)", "array.pop(element)", "array.unshift(element)", "array.shift(element)"]
+        choices: ["array.push(element)", "array.pop(element)", "array.unshift(element)", "array.shift(element)"],
         answer: "array.push(element)"
     }
 ]
@@ -55,7 +54,7 @@ timer.addEventListener("click", function () {
 function render(questIndex) {
     questDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    for (let i = 0; i < questions.length; i++) {
+    for (var i = 0; i < questions.length; i++) {
         var questText = questions[questIndex].title;
         var choicesText = questions[questIndex].choices;
         questDiv.textContent = questText;
@@ -140,7 +139,7 @@ function quizEnd() {
                 initials: initials,
                 score: timeLeft
             }
-            var allScores = localStorage.getItem("allscores");
+            var allScores = localStorage.getItem("allScores");
             if (allScores === null) {
                 allScores = [];
             } else {

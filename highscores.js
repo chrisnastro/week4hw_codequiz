@@ -1,5 +1,5 @@
-var highScore = document.querySelector("#highscore");
-var clearScores = document.querySelector("#refresh");
+var highScore = document.querySelector("#highScore");
+var clearScores = document.querySelector("#clear");
 var back = document.querySelector("#back");
 
 clearScores.addEventListener("click", function () {
@@ -7,12 +7,12 @@ clearScores.addEventListener("click", function () {
     location.reload();
 });
 
-var scores = localStorage.getItem("scores");
+var scores = localStorage.getItem("allScores");
 scores = JSON.parse(scores);
 
 if (scores !== null) {
     for (var i = 0; i < scores.length; i++) {
-        var scoreList = document.createElement("list");
+        var scoreList = document.createElement("li");
         scoreList.textContent = scores[i].initials + " " + scores[i].score;
         highScore.appendChild(scoreList);
     }
