@@ -31,6 +31,7 @@ function render(questIndex) {
     for (let i = 0; i < questions.length; i++) {
         var questText = questions[questIndex].title;
         var choicesText = questions[questIndex].choices;
+        questDiv.textContent = questText;
     }
     choicesText.forEach(function (newQuest) {
         var listQuest = document.createElement("li");
