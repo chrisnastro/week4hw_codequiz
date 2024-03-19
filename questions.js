@@ -1,4 +1,3 @@
-
 var score = 0;
 var questIndex = 0;
 var currentTime = document.querySelector("#currentTime");
@@ -9,6 +8,34 @@ var secondsLeft = 76;
 var holdInterval = 0;
 // var penalty = 10;
 var ulCreate = document.createElement("ul");
+
+var questions = [
+    {
+        title: "What is the correct syntax for referring to an external script called \"app.js\"?",
+        choices: [ "<script href=\"app.js\"", "<script name=\"app.js\">", "<script src=\"app.js\">", "<script file=\"app.js\">"],
+        answer: "<script src=\"app.js\">"
+    },
+    {
+        title: "How do you write a conditional statement for executing some statements only if \"i\" is equal to 5?",
+        choices: ["if i = 5", "if i == 5 then", "if (i == 5)", "if i = 5 then"],
+        answer: "if (i == 5)"
+    },
+    {
+        title: "How do you create a function in JavaScript?",
+        choices: ["function = myFunction()", "function:myFunction()", "function myFunction()", "create myFunction()" ],
+        answer: "function myFunction()"
+    },
+    {
+        title: "What is the output of this code?",
+        choices: ["\"null\"", "\"object\"", "\"undefined\"", "\"number\""],
+        answer: "\"object\""
+    },
+    {
+        title: "Which method is used to add an element at the end of an array?",
+        choices: ["array.push(element)", "array.pop(element)", "array.unshift(element)", "array.shift(element)"]
+        answer: "array.push(element)"
+    }
+]
 
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
