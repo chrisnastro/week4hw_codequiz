@@ -36,6 +36,10 @@ THEN I can save my initials and my score
 
 ## Submission
 
+* [Deployed App](https://chrisnastro.github.io/week4hw_codequiz/)
 
+* [GitHub Repo](https://github.com/chrisnastro/week4hw_codequiz)
+
+https://github.com/chrisnastro/week4hw_codequiz
 
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
